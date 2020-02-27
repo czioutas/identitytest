@@ -9,7 +9,6 @@ namespace identityissue
 
         [ForeignKey(nameof(Details))]
         public int? DetailsEntityId { get; set; }
-
         public DetailsEntity Details { get; set; }
 
         public ApplicationUserEntity()

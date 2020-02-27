@@ -10,6 +10,10 @@ namespace identityissue
 
         public string Value { get; set; }
 
+        [ForeignKey(nameof(Depth2))]
+        public int? Depth2EntityId { get; set; }
+        public Depth2Entity Depth2 { get; set; }
+
         public DetailsEntity()
         {
         }

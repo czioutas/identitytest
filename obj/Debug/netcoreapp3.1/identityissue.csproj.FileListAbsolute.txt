@@ -41,3 +41,6 @@ c:\Users\chris\Documents\Repos\identityissue\obj\Debug\netcoreapp3.1\identityiss
 C:\Users\chris\Documents\Repos\identityissue\obj\Debug\netcoreapp3.1\identityissue.csproj.CopyComplete
 c:\Users\chris\Documents\Repos\identityissue\obj\Debug\netcoreapp3.1\identityissue.dll
 c:\Users\chris\Documents\Repos\identityissue\obj\Debug\netcoreapp3.1\identityissue.pdb
+c:\Users\chris\Documents\Repos\identityissue\bin\Debug\netcoreapp3.1\Npgsql.dll
+c:\Users\chris\Documents\Repos\identityissue\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\chris\Documents\Repos\identityissue\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll

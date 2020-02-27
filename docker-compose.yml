@@ -1,0 +1,24 @@
+# The infra.yml contains all the infrastructure required in order to support the application
+
+version: '3.4'
+
+services:     
+  db:
+    container_name: db
+    image: postgres:12.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=db
+      - POSTGRES_PASSWORD=db
+      - POSTGRES_DB=db
+      - POSTGRES_PORT=5432
+      #PGDATA: /var/lib/postgresql/data/pg_data
+    volumes:
+      - ./Docker/db:/docker-entrypoint-initdb.d      
+    networks:
+      - inner
+    ports:
+      - '5432:5432'   
+
+networks:
+    inner:

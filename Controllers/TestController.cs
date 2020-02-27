@@ -44,7 +44,14 @@ namespace identityissue.Controllers
             var _userB1 = await _userManager.FindByEmailAsync(userB.Email);
             var _userB2 = await _userManager.FindByEmailIncludeAsync(userB.Email);            
 
-            return Ok("1");
+            bool t1 = _userA1.Details != null;
+            bool t2 = _userA2.Details != null;
+            bool t3 = _userB1.Details == null;
+            bool t4 = _userB2.Details == null;
+            bool total = t1 && t2 && t3 && t4;
+            Console.WriteLine($"Result is {total}");
+
+            return Ok(total.ToString());
         }
     }
 }

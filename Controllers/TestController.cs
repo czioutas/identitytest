@@ -27,17 +27,22 @@ namespace identityissue.Controllers
         {
             Fixture _fixture = new Fixture();
 
-            var user = _fixture.Create<ApplicationUserEntity>();
-            user.DetailsEntityId = 0;
-            user.Email = "whatever@gmail.com";        
+            var userA = _fixture.Create<ApplicationUserEntity>();
+            userA.DetailsEntityId = 0;
+            userA.Email = "withdetails@gmail.com";
+            await _userManager.CreateAsync(userA, "Whatever!1");
 
-            var identityResult = await _userManager.CreateAsync(user, "Whatever!1");
+            var userB = _fixture.Create<ApplicationUserEntity>();
+            userB.DetailsEntityId = 0;
+            userB.Details = null;
+            userB.Email = "nodetails@gmail.com";
+            await _userManager.CreateAsync(userB, "Whatever!1");
 
-            var a = await _userManager.FindByEmailAsync(user.Email);
+            var _userA1 = await _userManager.FindByEmailAsync(userA.Email);
+            var _userA2 = await _userManager.FindByEmailIncludeAsync(userA.Email);
 
-            var b = await _userManager.FindByIdAsync("1");
-
-            var c = await _userManager.FindByEmailIncludeAsync(user.Email);
+            var _userB1 = await _userManager.FindByEmailAsync(userB.Email);
+            var _userB2 = await _userManager.FindByEmailIncludeAsync(userB.Email);            
 
             return Ok("1");
         }

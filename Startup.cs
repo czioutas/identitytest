@@ -22,6 +22,7 @@ namespace identityissue
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // IF YOU WANNA USE PGSQL GO TO PROGRAM AND UNCOMMENT DROP AND UPDATE
             // var DbConnectionString = Configuration.GetConnectionString("DataPgsql");
             // Console.WriteLine($"DB: {DbConnectionString}");
             // services.AddDbContext<DbContext>(

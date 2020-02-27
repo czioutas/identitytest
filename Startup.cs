@@ -22,23 +22,23 @@ namespace identityissue
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var DbConnectionString = Configuration.GetConnectionString("DataPgsql");
-            Console.WriteLine($"DB: {DbConnectionString}");
-            services.AddDbContext<DbContext>(
-                options =>
-                {
-                    options.EnableSensitiveDataLogging();
-                    options.UseNpgsql(DbConnectionString);
-                }
-            );
-
+            // var DbConnectionString = Configuration.GetConnectionString("DataPgsql");
+            // Console.WriteLine($"DB: {DbConnectionString}");
             // services.AddDbContext<DbContext>(
             //     options =>
             //     {
             //         options.EnableSensitiveDataLogging();
-            //         options.UseInMemoryDatabase(databaseName: "issue");
+            //         options.UseNpgsql(DbConnectionString);
             //     }
             // );
+
+            services.AddDbContext<DbContext>(
+                options =>
+                {
+                    options.EnableSensitiveDataLogging();
+                    options.UseInMemoryDatabase(databaseName: "issue");
+                }
+            );
 
             services.AddIdentity<ApplicationUserEntity, ApplicationRoleEntity>(options =>
             {

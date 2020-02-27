@@ -20,8 +20,8 @@ namespace identityissue
             {
                 var services = scope.ServiceProvider;
 
-                scope.ServiceProvider.GetService<DbContext>().Database.EnsureDeleted();
-                scope.ServiceProvider.GetService<DbContext>().Database.Migrate();
+                // scope.ServiceProvider.GetService<DbContext>().Database.EnsureDeleted();
+                // scope.ServiceProvider.GetService<DbContext>().Database.Migrate();
             }
             
             host.Run();
